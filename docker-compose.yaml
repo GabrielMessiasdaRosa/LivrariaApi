@@ -1,0 +1,37 @@
+services:
+  sql-server:
+    image: "mcr.microsoft.com/mssql/server:2019-latest"
+    restart: always
+    environment:
+      SA_PASSWORD: "$wtBv4z!Q*AJhA5u"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    volumes:
+      - dataProject:/var/opt/mssql
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: "2G"
+  dotnet-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=sql-server;Database=LivrariaDb;User Id=sa;Password=$wtBv4z!Q*AJhA5u;TrustServerCertificate=True;Encrypt=False;
+    depends_on:
+      - sql-server
+
+  init-db:
+    image: mcr.microsoft.com/mssql-tools
+    depends_on:
+      - sql-server
+    entrypoint: /opt/mssql-tools/bin/sqlcmd -S sql-server -U sa -P $wtBv4z!Q*AJhA5u -i /initdb.sql
+    volumes:
+      - ./initdb.sql:/initdb.sql
+volumes:
+  dataProject:
