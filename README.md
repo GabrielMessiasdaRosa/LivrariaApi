@@ -15,21 +15,21 @@
    \`\`\`
 
 3. O projeto estará disponível na porta \`5000\`. Abra o navegador e acesse:
-   \`\`\`
+   ```bash
    http://localhost:5000/
-   \`\`\`
+   ```
 4. Para parar a execução do projeto, pressione \`Ctrl + C\` no terminal e execute o comando abaixo:
-   \`\`\`bash
+   ```bash
    docker-compose down
-   \`\`\`
+   ```
 5. Para remover os containers e as imagens, execute o comando abaixo:
-   \`\`\`bash
+   ```bash
    docker-compose down --rmi all
-   \`\`\`
+   ```
 6. Para remover os containers, as imagens e os volumes, execute o comando abaixo:
-   \`\`\`bash
+   ```bash
    docker-compose down --volumes --rmi all
-   \`\`\`
+   ```
 
 7. Enjoy! 🚀
 
