@@ -10,9 +10,9 @@
 1. Certifique-se de que o Docker e o Docker Compose estão instalados e em execução.
 
 2. No diretório raiz do projeto, execute o comando abaixo para construir e rodar os containers:
-   \`\`\`bash
+   ```bash
    docker-compose up --build
-   \`\`\`
+   ```
 
 3. O projeto estará disponível na porta \`5000\`. Abra o navegador e acesse:
    ```bash
