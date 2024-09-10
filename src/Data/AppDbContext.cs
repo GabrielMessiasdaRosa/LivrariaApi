@@ -6,13 +6,11 @@ public class AppDbContext : DbContext
     {
         if (!optionsBuilder.IsConfigured)
         {
-            optionsBuilder.UseSqlServer("Server=sql-server;Database=LivrariaDb;User Id=sa;Password=Password;MultipleActiveResultSets=true");
+            optionsBuilder.UseSqlServer("Server=sql-server;Database=LivrariaDb;User Id=sa;Password=$wtBv4z!Q*AJhA5u;TrustServerCertificate=True;Encrypt=False;");
         }
     }
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
     }
     public DbSet<Livro> Livros { get; set; }
-
-
 }
