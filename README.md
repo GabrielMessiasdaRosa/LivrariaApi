@@ -41,6 +41,6 @@
 
 ## POST /livros
 
-## PUT /livros?id={item_id}
+## PATCH /livros?id={item_id}
 
 ## DELETE /livros?id={item_id}
