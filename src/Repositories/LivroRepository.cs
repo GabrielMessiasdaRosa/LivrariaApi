@@ -35,6 +35,12 @@ public class LivroRepository : ILivroRepository
 
     public async Task AtualizarLivro(Livro livro)
     {
+        var trackedEntity = await _context.Livros.FindAsync(livro.Id);
+        if (trackedEntity != null)
+        {
+            _context.Entry(trackedEntity).State = EntityState.Detached;
+        }
+
         _context.Entry(livro).State = EntityState.Modified;
         await _context.SaveChangesAsync();
     }

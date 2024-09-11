@@ -79,7 +79,7 @@ public class Program
                     await livroRepository.AdicionarLivro(livro);
                     response.StatusCode = 201;
                 }
-                else if (request.HttpMethod == "PUT" && request.Url.AbsolutePath == "/livros")
+                else if (request.HttpMethod == "PATCH" && request.Url.AbsolutePath == "/livros")
                 {
                     var livroJson = new StreamReader(request.InputStream).ReadToEnd();
                     var livro = JsonSerializer.Deserialize<Livro>(livroJson);
