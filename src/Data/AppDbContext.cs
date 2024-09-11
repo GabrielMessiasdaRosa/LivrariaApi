@@ -6,7 +6,7 @@ public class AppDbContext : DbContext
     {
         if (!optionsBuilder.IsConfigured)
         {
-            optionsBuilder.UseSqlServer("Server=sql-server;Database=LivrariaDb;User Id=sa;Password=$wtBv4z!Q*AJhA5u;TrustServerCertificate=True;Encrypt=False;");
+            optionsBuilder.UseSqlServer("Server=sql-server;Database=LivrariaDb;User Id=sa;Password=TwtBv4z!Q*AJhA5u;TrustServerCertificate=True;Encrypt=False;");
         }
     }
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
